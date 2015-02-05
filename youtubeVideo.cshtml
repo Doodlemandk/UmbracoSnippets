@@ -1,0 +1,11 @@
+@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+@if (Model.MacroParameters["ytVideoLink"] != null)
+{
+  var fullLink = Model.MacroParameters["ytVideoLink"].ToString();
+  var youTubeId = fullLink.Split('=').Last();
+
+  <div class="videoWrapper">
+	<iframe type="text/html" src="http://www.youtube.com/embed/@youTubeId" frameborder="0"></iframe>
+  </div>
+}
